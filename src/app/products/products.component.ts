@@ -12,9 +12,10 @@ export class ProductsComponent implements OnInit {
   products: any[] = [];
   productsCategoryDict = {};
   productsCategories: any[] = [];
-  selectedProductsCategory: {} = {};
+  selectedProductsCategory: {} = {'products': []};
 
   constructor(private http: HttpClient) {
+    this.selectedProductsCategory = {'products': []};
     this.getJSON().subscribe(data => {
       this.products = data;
       this.getProductsCategoryDict(this.products);

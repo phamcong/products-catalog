@@ -15,7 +15,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-deck products-deck">
-          <div class="card border-primary mb-3" *ngFor="let product of selectedProductsCategory.products; let idx = index">
+          <div class="card border-primary mb-3" *ngFor="let product of selectedProductsCategory['products']; let idx = index">
             <div class="product-image div">
               <img class="product-image" src="{{ product.imageURL }}" alt="Card image cap">
             </div>

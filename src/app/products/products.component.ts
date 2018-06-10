@@ -27,7 +27,8 @@ export class ProductsComponent implements OnInit {
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get('https://www.utc.fr/~phamcong/products.json');
+    /*return this.http.get('https://www.utc.fr/~phamcong/products.json');*/
+    return this.http.get('assets/data/products.json');
   }
 
   private getProductsCategoryDict(products: any[]): void {

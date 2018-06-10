@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="container-fluid">
+    <h3>Danh mục sản phẩm</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="list-group product-category">
+          <li class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let item of productsCategories"
+              [ngStyle]="{'background-color': item.isSelected ? '#EB984E' : '#ABB2B9'}"
+              (click)="selectCategory(item)">
+            {{ item.name }}
+            <span class="badge badge-primary badge-pill">{{ item.quantity }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <div class="card-deck products-deck">
+          <div class="card border-primary mb-3" *ngFor="let product of selectedProductsCategory.products; let idx = index">
+            <div class="product-image div">
+              <img class="product-image" src="{{ product.imageURL }}" alt="Card image cap">
+            </div>
+            <div class="card-body-bottom product-description">
+              <table style="width:100%">
+                <tr><td class="product-attribute">Hãng SX</td><td>{{ product.company }}</td></tr>
+                <tr><td class="product-attribute">Nơi SX</td><td>{{ product.place }}</td></tr>
+                <tr><td class="product-attribute">Kích thước</td><td>{{ product.size }} ({{ product.unit }})</td></tr>
+                <tr><td class="product-attribute">Giá</td><td>{{ product.price }}</td></tr>
+                <tr><td class="product-attribute">Ghi chú</td><td>{{ product.note }}</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

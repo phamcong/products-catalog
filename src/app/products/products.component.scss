@@ -1,0 +1,80 @@
+// Bootstrap 4 breakpoints & gutter
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$grid-gutter-width: 30px !default;
+
+// number of cards per line for each breakpoint
+$cards-per-line: (
+  xs: 1,
+  sm: 2,
+  md: 2,
+  lg: 2,
+  xl: 2
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+  @media (min-width: $breakpoint) {
+    .card-deck .card {
+      flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+    }
+  }
+}
+
+.card {
+  margin-bottom: 10px !important;
+  margin-top: 10px;
+}
+
+.product-category {
+  height: 80vh;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.product-attribute {
+  width: 30%;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.product-image-div {
+  height: 150px;
+}
+
+.product-image {
+  max-height: 250px;
+  max-width: 95%;
+  display:block;
+  margin:auto;
+}
+
+.product-description {
+  margin: 10px;
+  font-size: 14px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.products-deck {
+  height: 80vh;
+  overflow-y: auto;
+  background-color: dimgrey;
+}
